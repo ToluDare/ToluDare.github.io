@@ -1,0 +1,249 @@
+html,
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  margin: auto;
+ 
+  background-color: rgb(224, 117, 117);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.in-card-text,#signature
+{
+
+  font-size: small;
+  
+}
+#signature{
+
+  font-style: italic;
+  
+}
+.envelope {
+  content: url(Envelope.webp);
+  width: 430px;
+  position: absolute;
+  left: 18%;
+  top: 3%;
+  filter: drop-shadow(1.5px 0.75px 1.75px #4d4d4d);
+}
+
+.card {
+  position: relative;
+  margin: auto;
+  box-shadow: inset 5px 0px 15px 0px rgba(0, 0, 0, 0.1),
+    3px 0px 3px -2px rgba(0, 0, 0, 0.3);
+  background-color: #fffffa;
+      transform: scale(1.05);
+  left: 12px;
+}
+
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -10px 0px 0px -10px;
+  margin: auto;
+  border: 1px solid #e0e0db;
+  backface-visibility: hidden;
+  background-color: #e8e6e3;
+  background-size: contain;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 1s ease-in-out;
+  filter: saturate(1.125) brightness(1.0125);
+}
+
+.card:hover .front {
+  transform: perspective(800px) rotateY(-170deg);
+  background-color: rgb(205, 205, 205);
+}
+
+.card:hover .back {
+  transform: perspective(800px) rotateY(-170deg);
+  box-shadow: 7px 0px 2px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fffffa;
+}
+
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -10px 0px 0px -10px;
+  margin: auto;
+  backface-visibility: visible;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.25));
+  box-shadow: inset 5px 0px 15px 0px rgba(0, 0, 0, 0.1),
+    3px 0px 3px 1px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 1s ease-in-out;
+  background-color: #fff;
+}
+.text-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  color: #929292;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.f-box {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: transparent;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.f-box img {
+  margin-top: 0px;
+  height: 100%;
+  width: auto;
+}
+
+
+
+
+@media (max-width: 675px) {
+  .envelope {
+    width: 380px;
+}
+  
+  .card {
+    height: 376px;
+    width: 238px;
+}
+}
+
+.hearts {
+  position: static;
+  z-index:2;
+}
+
+.heartOne {
+  position: absolute;
+  left:5vh;
+  top:100vh;
+  animation:  upTwo 9s linear infinite ;
+}
+
+.heartTwo {
+  position: absolute;
+  left:35vh;
+  top:86vh;
+  animation: upTwo 9s linear infinite;
+}
+
+.heartThree {
+  position: absolute;
+  left:46vh;
+  top:65vh;
+  animation:  upTwo 9s linear infinite 3.5s;
+}
+
+.heartFour {
+  position: absolute;
+  left:67vh;
+  top:57vh;
+  animation: upTwo 9s linear infinite 3.5s;
+}
+
+.heartFive {
+  position: absolute;
+  left:150px;
+  top:400px;
+  animation: upTwo 13s linear infinite 4.5s;
+}
+
+.right-side:before, .right-side:after {
+  position: absolute;
+  content:"";
+  transform-origin: left;
+  animation: move 1s ease infinite;
+}
+
+.right-side:before {
+  border-radius:50% 50% 50% 0;
+  width:21px;
+  height:20px;
+  background-color: #c9184a;
+  left:-0.26px;
+}
+
+.right-side:after {
+  height:0;
+  width:0;
+  border-bottom:10px solid transparent;
+  border-left: 15px solid #c9184a;
+  top:19px;
+  left:-0.26px;
+}
+
+@keyframes move {
+  0%, 100% {transform: rotateY(0);}
+  50% {transform: rotateY(-45deg);}
+}
+
+.left-side:before, .left-side:after {
+  position: absolute;
+  content:"";
+  transform-origin: right;
+  animation: move 1s ease infinite;
+}
+
+.left-side:before {
+  border-radius:50% 50% 0 50%;
+  width:20px;
+  height:20px;
+  left:-20.7px;
+  background-color: #ff4d6d;
+}
+
+.left-side:after {
+  height:0;
+  width:0;
+  left:-15px;
+  border-bottom:10px solid transparent;
+  border-right: 15px solid #ff4d6d;
+  top:19px;
+}
+
+@keyframes up {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-200px);}
+}
+
+@keyframes upTwo {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-645px);}
+}
+
+.text {
+  position: absolute;
+  color: #800f2f;
+  font-size:30px;
+  font-family: 'Pacifico', cursive;
+  line-height:1;
+  text-align: center;
+  width:380px;
+  left:10px;
+  z-index:3;
+  top:320px;
+  animation: up 1s ease forwards;
+  transition: .2s;
+}
